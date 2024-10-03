@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Game Embed</title>
+</head>
+<body>
+    <h1>Embed Flash Game with Ruffle</h1>
+
+    <!-- Ruffle JavaScript -->
+    <script src="ruffle/ruffle.js"></script>
+    
+    <div>
+        <!-- Embed SWF file -->
+        <object id="game" width="800" height="600" data="game.swf"></object>
+    </div>
+
+    <script>
+        // Initialize Ruffle player
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const gameObject = document.getElementById("game");
+        gameObject.replaceWith(player);
+        player.load("game.swf");
+    </script>
+</body>
+</html>
